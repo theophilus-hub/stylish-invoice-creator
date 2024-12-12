@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing";
 import AuthPage from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
-import { InvoicePreview } from "./components/InvoicePreview";
+import InvoicePage from "./pages/InvoicePage";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +20,7 @@ const App = () => (
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<AuthPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/invoice" element={<InvoicePreview />} />
+          <Route path="/invoice" element={<InvoicePage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
