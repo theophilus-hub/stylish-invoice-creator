@@ -34,36 +34,36 @@ export function InvoicePreview({ data, onBack }: InvoicePreviewProps) {
 
   return (
     <div className="max-w-2xl mx-auto p-8">
-      <div ref={invoiceRef} className="bg-white rounded-lg shadow-lg p-8">
+      <div ref={invoiceRef} className="bg-white rounded-xl shadow-lg p-8 border border-blue-100">
         <div
-          className="h-2 w-full rounded-t-lg mb-8"
+          className="h-2 w-full rounded-t-xl mb-8"
           style={{ backgroundColor: data.themeColor }}
         />
 
         <div className="flex justify-between items-start mb-8">
           <div>
-            <h1 className="text-2xl font-bold" style={{ color: data.themeColor }}>
+            <h1 className="text-3xl font-bold" style={{ color: data.themeColor }}>
               {data.companyName}
             </h1>
-            <p className="text-gray-600 mt-1">Invoice #{invoiceNumber}</p>
+            <p className="text-gray-600 mt-2">Invoice #{invoiceNumber}</p>
           </div>
           <div className="text-right">
             <p className="text-gray-600">Date</p>
-            <p className="font-medium">{currentDate}</p>
+            <p className="font-medium text-gray-900">{currentDate}</p>
           </div>
         </div>
 
         <div className="border-t border-b border-gray-200 py-8 my-8">
           <div className="mb-4">
-            <h2 className="text-sm text-gray-600 uppercase">Description</h2>
-            <p className="mt-2 text-lg">{data.description}</p>
+            <h2 className="text-sm text-gray-600 uppercase font-medium">Description</h2>
+            <p className="mt-2 text-lg text-gray-900">{data.description}</p>
           </div>
         </div>
 
         <div className="flex justify-end mb-8">
           <div className="text-right">
-            <p className="text-sm text-gray-600 uppercase mb-2">Total Amount</p>
-            <p className="text-3xl font-bold" style={{ color: data.themeColor }}>
+            <p className="text-sm text-gray-600 uppercase mb-2 font-medium">Total Amount</p>
+            <p className="text-4xl font-bold" style={{ color: data.themeColor }}>
               ${data.amount.toFixed(2)}
             </p>
           </div>
@@ -71,11 +71,12 @@ export function InvoicePreview({ data, onBack }: InvoicePreviewProps) {
       </div>
 
       <div className="flex justify-between items-center mt-8">
-        <Button variant="outline" onClick={onBack}>
+        <Button variant="outline" onClick={onBack} className="px-6">
           Back to Form
         </Button>
         <Button
           onClick={handleDownloadPDF}
+          className="px-6"
           style={{
             backgroundColor: data.themeColor,
           }}

@@ -16,5 +16,9 @@ export default function InvoicePage() {
     navigate("/dashboard");
   };
 
-  return <InvoicePreview data={invoiceData} onBack={handleBack} />;
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 py-8">
+      <InvoicePreview data={invoiceData} onBack={handleBack} />
+    </div>
+  );
 }
